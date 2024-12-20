@@ -53,7 +53,7 @@ public class PointController {
     ) {
         try{
             if(id <= 0){
-                return
+                System.out.println("아이디가 이상합니다.");
             }
             if(amount < 1000){
 
@@ -62,7 +62,7 @@ public class PointController {
 
             }
         }catch(Exception e){
-
+            e.printStackTrace();
         }
 
         //충전시 현재 유저의 포인트를 조회
