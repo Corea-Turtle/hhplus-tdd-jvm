@@ -56,10 +56,10 @@ public class PointController {
                 System.out.println("아이디가 이상합니다.");
             }
             if(amount < 1000){
-
+                System.out.println("충전 최소 금액은 1000이상 가능합니다.");
             }
             if(amount > 2000000000){
-
+                System.out.println("1회 충전 최대 금액은 2,000,000,000이상 가능합니다.");
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -68,8 +68,8 @@ public class PointController {
         //충전시 현재 유저의 포인트를 조회
         UserPoint curUserPoint = pointService.pointInquiry(id);
         long curAmount = curUserPoint.point();
-        if(curAmount + amount > 20000000)
-        return pointService.pointChargeAndUse(id, amount);
+
+        return curUserPoint;
     }
 
     /**
